@@ -1,8 +1,8 @@
-appId: 'helioslauncher'
-productName: 'Helios Launcher'
+appId: 'LBDS Launcher'
+productName: 'LBDS Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2024 Daniel Scalzi'
+copyright: 'Copyright © 2021-2024 Le Banquet du Sorcier'
 
 asar: true
 compression: 'maximum'
@@ -38,11 +38,11 @@ mac:
 
 # Linux Configuration
 linux: 
-  target: 'AppImage'
-  maintainer: 'Daniel Scalzi'
-  vendor: 'Daniel Scalzi'
-  synopsis: 'Modded Minecraft Launcher'
-  description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.'
+  target: 'deb'
+  maintainer: 'Le Banquet du Sorcier'
+  vendor: 'Le Banquet du Sorcier'
+  synopsis: 'Le Banquet du Sorcier'
+  description: ''
   category: 'Game'
 
 
