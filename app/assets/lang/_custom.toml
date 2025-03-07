@@ -1,7 +1,7 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "LBDS Launcher"
+title = "Le Banquet du Sorcier"
 
 [ejs.landing]
 mediaGitHubURL = ""
@@ -12,13 +12,13 @@ mediaDiscordURL = "https://discord.com/invite/lebanquetdusorcier"
 
 [ejs.settings]
 sourceGithubLink = "https://github.com/lebanquetdusorcier/LBDSLauncher"
-supportLink = "https://github.com/dscalZi/HeliosLauncher/issues"
+supportLink = "https://github.com/lebanquetdusorcier/LBDSLauncher/issues"
 
 [ejs.welcome]
-welcomeHeader = "Bienvenue sur LBDS"
+welcomeHeader = "Bienvenue sur Le Banquet du Sorcier !"
 welcomeDescription = "Bienvenue sur Le Banquet du Sorcier.
 
-Le banquet du sorcier est un serveur RP sur l'univers magique d'Harry Potter où tu pourras incarner ton propre personnage et vivre ta propre aventure à Poudlard.
+Le Banquet du Sorcier est un serveur roleplay sur l'univers magique d'Harry Potter où tu pourras incarner ton propre personnage et vivre ta propre aventure à Poudlard.
 Apprenez des sortilèges, confectionnez des potions, découvrez la faune et la flore et bien plus encore !
 
 En bref, soyez le sorcier que vous avez toujours rêvé d'incarner !"

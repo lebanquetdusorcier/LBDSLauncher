@@ -42,7 +42,13 @@ function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, on
     currentView = next
     $(`${current}`).fadeOut(currentFadeTime, async () => {
         await onCurrentFade()
+        if (next != "#landingContainer") {
+            document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+        }    
         $(`${next}`).fadeIn(nextFadeTime, async () => {
+            if (next == "#landingContainer") {        
+                document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0)'
+            }
             await onNextFade()
         })
     })
@@ -68,8 +74,8 @@ async function showMainUI(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
-        document.body.style.backgroundImage = `url('assets/images/backgrounds/background.gif')`
+        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0)'
+        //document.body.style.backgroundImage = `url('assets/images/backgrounds/background.gif')`
         $('#main').show()
 
         const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0
