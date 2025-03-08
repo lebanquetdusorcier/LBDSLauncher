@@ -35,6 +35,8 @@ mac:
         - 'arm64'
   artifactName: '${productName}-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
+  extendInfo:
+    NSMicrophoneUsageDescription: "Pour pouvoir utiliser le vocal de proximité, autorisez l'usage du micro."
 
 # Linux Configuration
 linux: 
