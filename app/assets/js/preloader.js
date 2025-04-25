@@ -38,6 +38,14 @@ function onDistroLoad(data){
             ConfigManager.setSelectedServer(data.getMainServer().rawServer.id)
             ConfigManager.save()
         }
+
+        // Update the selected server if marked as archived
+        let selectedServer = data.getServerById(ConfigManager.getSelectedServer());
+        if (selectedServer != null && selectedServer.rawServer.archived) {
+            logger.info('Updating selected server since current one is archived..')
+            ConfigManager.setSelectedServer(data.getMainServer().rawServer.id)
+            ConfigManager.save()
+        }
     }
     ipcRenderer.send('distributionIndexDone', data != null)
 }

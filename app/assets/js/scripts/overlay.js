@@ -295,6 +295,7 @@ async function populateServerListings(){
             </div>
         </button>`
     }
+    // TODO: add Archived icon
     document.getElementById('serverSelectListScrollable').innerHTML = htmlString
 
 }
