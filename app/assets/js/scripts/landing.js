@@ -149,7 +149,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/player/${authUser.uuid}')`
         }
     }
     user_text.innerHTML = username
@@ -163,17 +163,19 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.rawServer.id : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '&#8226; ' + (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
+    if (server_selection_button) server_selection_button.innerHTML = '&#8226; ' + (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
     if(getCurrentView() === VIEWS.settings){
         animateSettingsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '&#8226; ' + Lang.queryJS('landing.selectedServer.loading')
-server_selection_button.onclick = async e => {
-    e.target.blur()
-    await toggleServerSelection(true)
+if (server_selection_button) {
+    server_selection_button.innerHTML = '&#8226; ' + Lang.queryJS('landing.selectedServer.loading')
+    server_selection_button.onclick = async e => {
+        e.target.blur()
+        await toggleServerSelection(true)
+    }
 }
 
 // Update Mojang Status Color
@@ -246,9 +248,10 @@ const refreshServerStatus = async (fade = false) => {
 
         const servStat = await getServerStatus(47, serv.hostname, serv.port)
         console.log(servStat)
-        pLabel = Lang.queryJS('landing.serverStatus.players')
-        pVal = servStat.players.online + '/' + servStat.players.max
-
+        //pLabel = Lang.queryJS('landing.serverStatus.players')
+        //pVal = servStat.players.online + '/' + servStat.players.max
+        pLabel = "";
+        pVal = servStat.players.online + " joueur" + (servStat.players.online > 1 ? "s" : "") + " en ligne";
     } catch (err) {
         loggerLanding.warn('Unable to refresh server status, assuming offline.')
         loggerLanding.debug(err)
@@ -704,7 +707,8 @@ function slide_(up){
 }
 
 // Bind news button.
-document.getElementById('newsButton').onclick = () => {
+let newsButton = document.getElementById('newsButton');
+if (newsButton) newsButton.onclick = () => {
     // Toggle tabbing.
     if(newsActive){
         $('#landingContainer *').removeAttr('tabindex')
@@ -727,7 +731,7 @@ document.getElementById('newsButton').onclick = () => {
 let newsArr = null
 
 // News load animation listener.
-let newsLoadingListener = null
+let newsLoadingListener = null;
 
 /**
  * Set the news loading animation.
