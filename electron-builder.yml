@@ -1,6 +1,6 @@
 appId: 'LBDS Launcher'
 productName: 'LBDS Launcher'
-artifactName: '${productName}-setup-${version}.${ext}'
+artifactName: 'LBDS-Launcher-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2021-2026 Le Banquet du Sorcier'
 
@@ -38,7 +38,7 @@ mac:
       arch:
         - 'x64'
         - 'arm64'
-  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  artifactName: 'LBDS-Launcher-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
   extendInfo:
     NSMicrophoneUsageDescription: "Pour pouvoir utiliser le vocal de proximité, autorisez l'usage du micro."
