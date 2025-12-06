@@ -1,8 +1,8 @@
 {
   "name": "lbds",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "productName": "LBDS Launcher",
-  "description": "Modded Minecraft Launcher",
+  "description": "LBDS Launcher",
   "author": "Le Banquet du Sorcier (Fork de Daniel Scalzi)",
   "license": "UNLICENSED",
   "homepage": "https://github.com/lebanquetdusorcier/LBDSLauncher",
