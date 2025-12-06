@@ -2,7 +2,7 @@ appId: 'LBDS Launcher'
 productName: 'LBDS Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2021-2024 Le Banquet du Sorcier'
+copyright: 'Copyright © 2021-2026 Le Banquet du Sorcier'
 
 asar: true
 compression: 'maximum'
@@ -18,11 +18,11 @@ win:
   target: 
     - target: 'nsis'
       arch: 'x64'
-  publisherName: ["Le Banquet du Sorcier"]
-  certificateSubjectName: "Le Banquet du Sorcier"
-  sign:
-    azureSignOptions:
-      publisherName: "Le Banquet du Sorcier"
+  signtoolOptions:
+    publisherName: "Le Banquet du Sorcier"
+    certificateSubjectName: "Le Banquet du Sorcier"
+  signing:
+    trustedSigning:
       endpoint: "https://weu.codesigning.azure.net/"
       certificateProfileName: "lbds-launcher"
       codeSigningAccountName: "le-banquet-du-sorcier"
