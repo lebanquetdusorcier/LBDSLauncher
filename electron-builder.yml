@@ -21,8 +21,8 @@ win:
   signtoolOptions:
     publisherName: "Le Banquet du Sorcier"
     certificateSubjectName: "Le Banquet du Sorcier"
-  sign:
-    trustedSigning:
+    azureSignOptions:
+      publisherName: "Le Banquet du Sorcier"
       endpoint: "https://weu.codesigning.azure.net/"
       certificateProfileName: "lbds-launcher"
       codeSigningAccountName: "le-banquet-du-sorcier"
