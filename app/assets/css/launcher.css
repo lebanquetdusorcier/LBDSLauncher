@@ -1,5 +1,6 @@
 /* Imports */
 @import "./albert.css";
+@import "./launcherold.css";
 
 /* Base app */
 
@@ -27,6 +28,10 @@ body {
     background: linear-gradient(to bottom, rgba(128, 103, 51, 0.8) 10%, rgba(168, 168, 168, 0.05) 70%);
     width: 100vw;
     height: 100vh;
+}
+
+#main {
+  color: white;
 }
 
 /* Frame bar */
@@ -510,9 +515,477 @@ body {
     margin-bottom: 2px;
 }
 
-
 #landingContainer #lower #right #mojangStatusTooltip #mojangStatusNETitle {
     font-weight: bold;
     margin-bottom: 2px;
     margin-top: 8px;
+}
+
+/* Settings */
+#settingsContainer {
+  display: flex;
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.1));
+  gap: 48px;
+  height: calc(100vh - 20px);
+  padding-top: 20px;
+}
+
+#settingsContainer #settingsContainerLeft,
+#settingsContainer #settingsContainerRight {
+  padding: 24px;
+  padding-top: 24px;
+}
+
+#settingsContainer #settingsContainerLeft {
+  padding-right: 0;
+  flex-shrink: 0;
+  width: 160px;
+}
+
+#settingsContainer #settingsContainerRight {
+  padding-left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  flex-shrink: 1;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavHeader {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 12px;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavItemsContent {
+  display: flex;
+  flex-direction: column;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem {
+  background: transparent;
+  width: 100%;
+  height: 24px;
+  margin-bottom: 4px;
+  color: rgb(201, 201, 201);
+  border: 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 3px;
+  text-align: left;
+  padding: 0 8px;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem:hover {
+  color: white;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem[selected] {
+  border-left-color: #C5AA71;
+  color: white;
+  cursor: default;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavContentBottom {
+  padding-top: 100%;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavContentBottom #settingsNavDone {
+  background: transparent;
+  width: 100%;
+  height: 24px;
+  margin-bottom: 4px;
+  color: rgb(201, 201, 201);
+  border: 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 3px;
+  text-align: left;
+  padding: 0 8px;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+
+#settingsContainer #settingsNavContainer #settingsNavContentBottom #settingsNavDone:hover {
+  color: white;
+}
+
+#settingsContainer .settingsTabHeader {
+  margin-bottom: 12px;
+}
+
+#settingsContainer .settingsTabHeader .settingsTabHeaderText {
+  display: block;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+/** Settings - Account **/
+.settingsAuthAccountTypeContainer {
+  margin-bottom: 20px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAuthAccountTypeHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAddAuthAccount {
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  color: #dfdfdf;
+  border-radius: 2px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAddAuthAccount:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount {
+  border: 1px solid #555555;
+  background-color: rgba(0, 0, 0, .25);
+  padding: 12px 18px;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountDetailPane {
+  margin-bottom: 16px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountDetailPane .settingsAuthAccountDetailTitle {
+  color: #b9b9b9;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button {
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  color: #dfdfdf;
+  border-radius: 2px;
+  font-family: inherit;
+  cursor: pointer;
+  height: 22px;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button[selected] {
+  border-color: transparent;
+  color: #fff;
+  cursor: default;
+  padding-left: 0;
+}
+
+.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions .settingsAuthAccountLogOut:hover {
+  border-color: #ff2a2a;
+  background: #ff2a2a;
+  color: #fff;
+}
+
+/** Settings - Update **/
+#settingsUpdateStatusContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, .25);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#settingsUpdateStatusContent {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#settingsUpdateStatusHeadline {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.57);
+}
+#settingsUpdateTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#settingsUpdateVersion {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.57);
+}
+
+#settingsUpdateVersionCheck {
+  border-radius: 50%;
+  background: #23aa23;
+  text-align: center;
+  font-weight: bold;
+  margin: 11px 12px;
+  color: white;
+  height: 15px;
+  width: 15px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#settingsUpdateVersionDetails {
+  margin-left: 10px;
+}
+
+#settingsUpdateVersionTitle {
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: "bold";
+  color: #23aa23;
+  font-weight: bold;
+}
+
+#settingsUpdateVersionLine {
+  font-size: 10px;
+  color: grey;
+  font-weight: bold;
+}
+
+#settingsUpdateActionContainer {
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#settingsUpdateActionButton {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  transition: 0.25s ease;
+  color: #c7c7c7;
+  font-family: inherit;
+}
+#settingsUpdateActionButton:hover,
+#settingsUpdateActionButton:focus,
+#settingsUpdateActionButton:active {
+  color: white;
+}
+#settingsUpdateActionButton:disabled {
+  pointer-events: none;
+}
+
+/* Settings - About */
+#settingsAboutCurrentContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, .25);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#settingsAboutCurrentContent {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#settingsAboutCurrentHeadline {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.57);
+}
+#settingsAboutLogo {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+#settingsAboutTitle {
+  font-size: 23px;
+  padding-left: 10px;
+}
+
+#settingsAboutCurrentVersion {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+#settingsAboutCurrentVersionCheck {
+  border-radius: 50%;
+  background: #23aa23;
+  text-align: center;
+  font-weight: bold;
+  margin: 11px 12px;
+  color: white;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+#settingsAboutCurrentVersionDetails {
+  margin-left: 10px;
+}
+
+#settingsAboutCurrentVersionTitle {
+  font-size: 14px;
+  color: #23aa23;
+  font-weight: bold;
+}
+
+#settingsAboutCurrentVersionLine {
+  font-size: 14px;
+  color: grey;
+  font-weight: bold;
+}
+
+#settingsAboutButtons {
+  display: flex;
+  padding: 0px 15px;
+  margin-bottom: 5px;
+}
+.settingsAboutButton {
+  background: none;
+  border: none;
+  font-size: 10px;
+  color: grey;
+  padding: 0px 5px;
+  transition: 0.25s ease;
+  outline: none;
+  text-decoration: none;
+}
+.settingsAboutButton:hover,
+.settingsAboutButton:focus {
+  color: rgb(165, 165, 165);
+}
+.settingsAboutButton:active {
+  color: rgba(124, 124, 124, 0.75);
+}
+
+.settingsChangelogContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, .25);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.settingsChangelogContent {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.settingsChangelogHeadline {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.57);
+}
+.settingsChangelogLabel {
+  font-size: 14px;
+  color: rgb(170, 170, 170);
+  font-weight: bold;
+}
+
+.settingsChangelogText {
+  font-size: 12px;
+}
+
+.settingsChangelogText p {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.settingsChangelogText blockquote {
+  border-left: 0.25em solid rgba(126, 126, 126, 0.95);
+  margin: 0px;
+  padding: 0 0 0 1em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.settingsChangelogText code {
+  padding: 0.1em 0.4em;
+  font-size: 85%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border-radius: 3px;
+  font-family: inherit;
+}
+.settingsChangelogText li + li {
+  margin-top: 0.25em;
+}
+.settingsChangelogText a.commit-link {
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+}
+.settingsChangelogText a.commit-link:hover {
+  text-decoration: underline !important;
+  text-decoration-color: black;
+}
+.settingsChangelogText tt {
+  padding: 0.1em 0.4em;
+  font-size: 86%;
+  background-color: white;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+}
+.settingsChangelogText a.commit-link:hover tt {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.settingsChangelogText .highlight {
+  background: rgba(0, 0, 0, 0.3);
+  user-select: initial;
+  padding: 5px 10px;
+}
+.settingsChangelogText .highlight pre {
+  margin: 0px;
+}
+
+.settingsChangelogActions {
+  padding: 0px 15px 5px 15px;
+}
+.settingsChangelogButton {
+  padding: 0px;
 }

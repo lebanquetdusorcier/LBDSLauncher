@@ -43,11 +43,13 @@ function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, on
     $(`${current}`).fadeOut(currentFadeTime, async () => {
         await onCurrentFade()
         if (next != "#landingContainer") {
+            $('.credits').fadeOut(20);
             document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
-        }    
+        }
         $(`${next}`).fadeIn(nextFadeTime, async () => {
             if (next == "#landingContainer") {        
                 document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                $('.credits').fadeIn(20);
             }
             await onNextFade()
         })
