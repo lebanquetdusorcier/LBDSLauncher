@@ -25,9 +25,13 @@ body {
 }
 
 #gradient {
-    background: linear-gradient(to bottom, rgba(128, 103, 51, 0.8) 10%, rgba(168, 168, 168, 0.05) 70%);
-    width: 100vw;
-    height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 103, 51, 0.8) 10%,
+    rgba(168, 168, 168, 0.05) 70%
+  );
+  width: 100vw;
+  height: 100vh;
 }
 
 #main {
@@ -181,12 +185,12 @@ body {
 
 /* Credits */
 .credits {
-    position: absolute; 
-    bottom: 24px; 
-    left: 24px; 
-    color: #fff; 
-    font-size: 14px; 
-    font-weight: bold;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* Loading */
@@ -243,60 +247,60 @@ body {
 
 /* Landing */
 #landingContainer #lower {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    width: calc(100vw - 48px);
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: calc(100vw - 48px);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 }
 
 #landingContainer #lower #left {
-    padding-bottom: 60px;
-    flex: 1;
+  padding-bottom: 60px;
+  flex: 1;
 }
 
 #landingContainer #lower #left #server_status_wrapper {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 6px;
 }
 
 #landingContainer #lower #left #launch_button {
-    background: none;
-    border: none;
-    color: white;
-    font-family: inherit;
-    padding: 0;
-    font-size: 40px;
-    font-weight: bold;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, .25);
-    transition: text-shadow .1s ease;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  padding: 0;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: text-shadow 0.1s ease;
+  cursor: pointer;
 }
 
 #landingContainer #lower #left #launch_button:hover {
-    text-shadow: 6px 6px 6px rgba(0, 0, 0, .5);
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 #landingContainer #lower #left #launch_details {
-    display: none;
-    align-items: center;
+  display: none;
+  align-items: center;
 }
 #landingContainer #lower #left #launch_details #launch_details_left {
-    font-size: 40px;
-    font-weight: bold;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, .25);
-    margin-right: 18px;
-    width: 100px;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 18px;
+  width: 100px;
 }
 #landingContainer #lower #left #launch_details #launch_details_right {
-    width: 265px;
+  width: 265px;
 }
 #landingContainer #lower #left #launch_details #launch_details_text {
-    font-size: 12px;
-    padding-bottom: 8px;
+  font-size: 12px;
+  padding-bottom: 8px;
 }
 #launch_progress[value] {
   height: 10px;
@@ -314,45 +318,52 @@ body {
 }
 
 #landingContainer #upper {
-    position: fixed;
-    top: 48px;
-    left: 24px;
-    width: calc(100vw - 48px);
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+  position: fixed;
+  top: 48px;
+  left: 24px;
+  width: calc(100vw - 48px);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 #landingContainer #upper #left {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #landingContainer #upper #left #image_seal_container,
 #landingContainer #upper #left #image_seal_container #image_seal {
-    width: 42px;
-    height: 42px;
+  width: 42px;
+  height: 42px;
 }
 
 #landingContainer #upper #left #image_seal_container #updateAvailableTooltip {
-    position: relative;
-    top: 12px;
-    left: 0;
-    width: 300px;
+  position: relative;
+  top: 12px;
+  left: 0;
+  width: 300px;
+  visibility: hidden;
+  opacity: 0;
 }
 
-#landingContainer #upper #left #image_seal_container #updateAvailableTooltip #updateAvailableTooltipText {
-    background: rgba(0, 0, 0, .5);
-    border-radius: 4px;
-    padding: 0.2em 0.4em;
-    display: inline-block;
-    font-weight: bold;
-    animation: updatebg 1s linear infinite;
-    font-size: 12px;
+#landingContainer
+  #upper
+  #left
+  #image_seal_container
+  #updateAvailableTooltip
+  #updateAvailableTooltipText {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  display: inline-block;
+  font-weight: bold;
+  animation: updatebg 1s linear infinite;
+  font-size: 12px;
 }
 
 #landingContainer #upper #left #image_seal_container {
-    margin-right: 24px;
+  margin-right: 24px;
 }
 
 #landingContainer #upper #left #title_container #title_upper {
@@ -362,54 +373,54 @@ body {
 }
 
 #landingContainer #avatarBackground {
-    position: fixed;
-    top: 0;
-    right: 24px;
-    z-index: 10;
-    height: 200px;
-    width: 120px;
+  position: fixed;
+  top: 0;
+  right: 24px;
+  z-index: 10;
+  height: 200px;
+  width: 120px;
 }
 
 #landingContainer #avatarBackground #backsvg {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #landingContainer #avatarBackground #bordersvg {
-    width: 100%;
-    height: 100%;
-    z-index: 12;
-    position: absolute;
-    top: 0;
-    right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #landingContainer #avatarBackground #avatarContainer {
-    width: 100%;
-    height: 100%;
-    z-index: 11; 
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center 40%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
 }
 
 #landingContainer #avatarContainer #avatarOverlay {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(8px);
-    color: white;
-    font-family: inherit;
-    clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
-    opacity: 0;
-    cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-family: inherit;
+  clip-path: polygon(100% 0, 100% 100%, 50% 70%, 0 100%, 0 0);
+  opacity: 0;
+  cursor: pointer;
 }
 
 #avatarOverlay:hover,
@@ -418,113 +429,121 @@ body {
 }
 
 @keyframes updatebg {
-    0% {
-        background: rgba(0, 0, 0, .5);
-    }
+  0% {
+    background: rgba(0, 0, 0, 0.5);
+  }
 
-    50% {
-        background: rgba(0, 0, 0, .7);
-    }
+  50% {
+    background: rgba(0, 0, 0, 0.7);
+  }
 
-    100% {
-        background: rgba(0, 0, 0, .5);
-    }
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 #landingContainer #upper #right #rightContainer {
-    position: fixed;
-    top: 216px;
-    right: 24px;
-    width: 120px;
+  position: fixed;
+  top: 216px;
+  right: 24px;
+  width: 120px;
 }
 
 #landingContainer #upper #right #rightContainer #user_content {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 12px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
 #landingContainer #upper #right #rightContainer #mediaContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #landingContainer #upper #right #rightContainer #settingsMediaButton {
-    background: transparent;
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    border: 0;
-    cursor: pointer;
-    color: white;
-    padding: 0;
-    margin: 0;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 #landingContainer #upper #right #rightContainer #settingsMediaButton:hover {
-    color: rgb(190, 190, 190);
+  color: rgb(190, 190, 190);
 }
 
 #landingContainer #upper #right #rightContainer #settingsMediaButton svg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 #landingContainer #upper #right #rightContainer .mediaContainer a {
-    background: transparent;
-    text-align: center;
-    border: 0;
-    cursor: pointer;
-    color: white;
-    display: inline-block;
-    margin: auto;
-    margin-bottom: 12px;
+  background: transparent;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 12px;
 }
 
 #landingContainer #upper #right #rightContainer .mediaContainer a:hover {
-    color: rgb(223, 223, 223);
+  color: rgb(223, 223, 223);
 }
 
 #landingContainer #upper #right #rightContainer .mediaContainer a svg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 #landingContainer #lower #right #mojangStatusWrapper .bot_label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-#landingContainer #lower #right #mojangStatusWrapper:hover #mojangStatusTooltip {
-    display: block;
+#landingContainer
+  #lower
+  #right
+  #mojangStatusWrapper:hover
+  #mojangStatusTooltip {
+  display: block;
 }
 
 #landingContainer #lower #right #mojangStatusTooltip {
-    position: absolute;
-    bottom: 24px;
-    right: 0;
-    font-size: 14px;
-    background: rgba(0, 0, 0, .8);
-    border-radius: 6px;
-    padding: 6px;
-    display: none;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  padding: 6px;
+  display: none;
 }
 
 #landingContainer #lower #right #mojangStatusTooltip #mojangStatusTooltipTitle {
-    font-weight: bold;
-    margin-bottom: 2px;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 #landingContainer #lower #right #mojangStatusTooltip #mojangStatusNETitle {
-    font-weight: bold;
-    margin-bottom: 2px;
-    margin-top: 8px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-top: 8px;
 }
 
 /* Settings */
 #settingsContainer {
   display: flex;
-  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.1));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.1)
+  );
   gap: 48px;
   height: calc(100vh - 20px);
   padding-top: 20px;
@@ -561,7 +580,10 @@ body {
   flex-direction: column;
 }
 
-#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem {
+#settingsContainer
+  #settingsNavContainer
+  #settingsNavItemsContent
+  .settingsNavItem {
   background: transparent;
   width: 100%;
   height: 24px;
@@ -578,12 +600,18 @@ body {
   cursor: pointer;
 }
 
-#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem:hover {
+#settingsContainer
+  #settingsNavContainer
+  #settingsNavItemsContent
+  .settingsNavItem:hover {
   color: white;
 }
 
-#settingsContainer #settingsNavContainer #settingsNavItemsContent .settingsNavItem[selected] {
-  border-left-color: #C5AA71;
+#settingsContainer
+  #settingsNavContainer
+  #settingsNavItemsContent
+  .settingsNavItem[selected] {
+  border-left-color: #c5aa71;
   color: white;
   cursor: default;
 }
@@ -592,7 +620,10 @@ body {
   padding-top: 100%;
 }
 
-#settingsContainer #settingsNavContainer #settingsNavContentBottom #settingsNavDone {
+#settingsContainer
+  #settingsNavContainer
+  #settingsNavContentBottom
+  #settingsNavDone {
   background: transparent;
   width: 100%;
   height: 24px;
@@ -609,7 +640,10 @@ body {
   cursor: pointer;
 }
 
-#settingsContainer #settingsNavContainer #settingsNavContentBottom #settingsNavDone:hover {
+#settingsContainer
+  #settingsNavContainer
+  #settingsNavContentBottom
+  #settingsNavDone:hover {
   color: white;
 }
 
@@ -637,13 +671,17 @@ body {
   margin-bottom: 6px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAuthAccountTypeHeaderLeft {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccountTypeHeader
+  .settingsAuthAccountTypeHeaderLeft {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAddAuthAccount {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccountTypeHeader
+  .settingsAddAuthAccount {
   background: transparent;
   border: 1px solid #dfdfdf;
   color: #dfdfdf;
@@ -652,14 +690,16 @@ body {
   cursor: pointer;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccountTypeHeader .settingsAddAuthAccount:hover {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccountTypeHeader
+  .settingsAddAuthAccount:hover {
   border-color: #fff;
   color: #fff;
 }
 
 .settingsAuthAccountTypeContainer .settingsAuthAccount {
   border: 1px solid #555555;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
   padding: 12px 18px;
   border-radius: 6px;
   backdrop-filter: blur(6px);
@@ -668,23 +708,33 @@ body {
   gap: 16px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountDetailPane {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountDetailPane {
   margin-bottom: 16px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountDetailPane .settingsAuthAccountDetailTitle {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountDetailPane
+  .settingsAuthAccountDetailTitle {
   color: #b9b9b9;
   font-weight: bold;
   font-size: 13px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountActions {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountActions
+  button {
   background: transparent;
   border: 1px solid #dfdfdf;
   color: #dfdfdf;
@@ -694,19 +744,28 @@ body {
   height: 22px;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button:hover {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountActions
+  button:hover {
   border-color: #fff;
   color: #fff;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions button[selected] {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountActions
+  button[selected] {
   border-color: transparent;
   color: #fff;
   cursor: default;
   padding-left: 0;
 }
 
-.settingsAuthAccountTypeContainer .settingsAuthAccount .settingsAuthAccountActions .settingsAuthAccountLogOut:hover {
+.settingsAuthAccountTypeContainer
+  .settingsAuthAccount
+  .settingsAuthAccountActions
+  .settingsAuthAccountLogOut:hover {
   border-color: #ff2a2a;
   background: #ff2a2a;
   color: #fff;
@@ -716,7 +775,7 @@ body {
 #settingsUpdateStatusContainer {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(126, 126, 126, 0.57);
   border-radius: 6px;
@@ -812,7 +871,7 @@ body {
 #settingsAboutCurrentContainer {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(126, 126, 126, 0.57);
   border-radius: 6px;
@@ -903,7 +962,7 @@ body {
 .settingsChangelogContainer {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(126, 126, 126, 0.57);
   border-radius: 6px;
