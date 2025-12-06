@@ -15,6 +15,7 @@ extraResources:
 
 # Windows Configuration
 win: 
+  executableName: LBDS-Launcher
   target: 
     - target: 'nsis'
       arch: 'x64'
