@@ -23,6 +23,7 @@ win:
     endpoint: "https://weu.codesigning.azure.net/"
     certificateProfileName: "lbds-launcher"
     codeSigningAccountName: "le-banquet-du-sorcier"
+    publisherName: "Le Banquet du Sorcier"
 
 # Windows Installer Configuration
 nsis:
