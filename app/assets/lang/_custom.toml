@@ -4,8 +4,8 @@
 title = "Le Banquet du Sorcier"
 
 [ejs.landing]
-mediaGitHubURL = ""
-mediaTwitterURL = "https://x.com/lbds_mc"
+mediaGitHubURL = "https://github.com/lebanquetdusorcier/LBDSLauncher"
+mediaXURL = "https://x.com/lbds_mc"
 mediaInstagramURL = "https://www.instagram.com/lebanquetdusorcier/"
 mediaYouTubeURL = "https://www.youtube.com/@lebanquetdusorcier4356"
 mediaDiscordURL = "https://discord.com/invite/lebanquetdusorcier"
