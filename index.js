@@ -152,8 +152,6 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGIN, (ipcEvent, ...arguments_) => {
                 queryMap[k] = v;
             });
 
-            queryMap.code = queryMap.code.substring(0, queryMap.code.length - 1);
-
             ipcEvent.reply(MSFT_OPCODE.REPLY_LOGIN, MSFT_REPLY_TYPE.SUCCESS, queryMap, msftAuthViewSuccess)
 
             msftAuthSuccess = true
