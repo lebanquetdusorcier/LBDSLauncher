@@ -25,11 +25,11 @@ body {
 }
 
 #gradient {
-  background: linear-gradient(
+  /*background: linear-gradient(
     to bottom,
     rgba(128, 103, 51, 0.8) 10%,
     rgba(168, 168, 168, 0.05) 70%
-  );
+  );*/
   width: 100vw;
   height: 100vh;
 }
@@ -52,13 +52,15 @@ body {
 
 #frameMain {
   display: flex;
-  background: #c5aa71;
+  /*background: #c5aa71;*/
+  background: #141416;
 }
 
 #frameResizableTop {
   height: 2px;
   width: 100%;
-  background: #c5aa71;
+  /*background: #c5aa71;*/
+  background: #141416;
   -webkit-app-region: no-drag;
 }
 
