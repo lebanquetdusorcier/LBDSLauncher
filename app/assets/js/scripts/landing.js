@@ -460,7 +460,22 @@ async function dlAsync(login = true) {
     let distro
 
     try {
-        distro = await DistroAPI.refreshDistributionOrFallback()
+        const authUser = ConfigManager.getSelectedAccount()
+        if (authUser) {
+            setLaunchDetails(Lang.queryJS('landing.dlAsync.checkingSeasonStatus'))
+            try {
+                distro = await DistroAPI.refreshDistributionOrFallbackWithAuth(authUser)
+            } catch (err) {
+                if (err.message === 'season_is_closed') {
+                    loggerLaunchSuite.info('Season is closed, aborting launch.')
+                    showLaunchFailure(Lang.queryJS('landing.dlAsync.seasonClosedTitle'), Lang.queryJS('landing.dlAsync.seasonClosedText'))
+                    return
+                }
+                throw err // Re-throw other errors
+            }
+        } else {
+            distro = await DistroAPI.refreshDistributionOrFallback()
+        }
         onDistroRefresh(distro)
     } catch(err) {
         loggerLaunchSuite.error('Unable to refresh distribution index.', err)
