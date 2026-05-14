@@ -269,7 +269,8 @@ body {
   margin-top: 6px;
 }
 
-#landingContainer #lower #left #launch_button {
+#landingContainer #lower #left #launch_button,
+#landingContainer #lower #left #season_button {
   background: none;
   border: none;
   color: white;
@@ -284,6 +285,10 @@ body {
 
 #landingContainer #lower #left #launch_button:hover {
   text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+#landingContainer #lower #left #season_button {
+  cursor: default !important;
 }
 
 #landingContainer #lower #left #launch_details {

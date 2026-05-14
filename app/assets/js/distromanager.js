@@ -47,8 +47,8 @@ api.exchangeTicket = async function(authUser) {
         this.sonarTicket = ticket
         return ticket
     } catch (error) {
-        if (error.response && error.response.body && error.response.body.error === 'ticket_rejected' && error.response.body.message === 'season_is_closed') {
-            throw new Error('season_is_closed')
+        if (error.response && error.response.body && error.response.body.error === 'ticket_rejected' && error.response.body.message === 'season_closed') {
+            throw new Error('season_closed')
         }
         if (error.response && error.response.body && error.response.body.error === 'ticket_rejected') {
             throw new Error('ticket_rejected:' + error.response.body.message)

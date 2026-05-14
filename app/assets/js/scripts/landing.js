@@ -480,9 +480,16 @@ async function dlAsync(login = true) {
         try {
             distro = await DistroAPI.refreshDistributionOrFallbackWithAuth(authUser)
         } catch (err) {
-            if (err.message === 'season_is_closed') {
+            if (err.message === 'season_closed' || err.message === 'ticket_rejected:season_closed') {
                 loggerLaunchSuite.info('Season is closed, aborting launch.')
-                showLaunchFailure(Lang.queryJS('landing.dlAsync.seasonClosedTitle'), Lang.queryJS('landing.dlAsync.seasonClosedText'))
+                showLaunchFailure(Lang.queryJS('landing.dlAsync.seasonClosedTitle'), Lang.queryJS('landing.dlAsync.seasonClosedText'));
+                // TODO: set the button on start
+                // TODO: add a way to prevent rebooting the launcher
+                const seasonClosedBtn = document.createElement("button");
+                seasonClosedBtn.id = "season_button";
+                seasonClosedBtn.innerText = "SAISON FERMÉE";
+                document.getElementById("launch_content").appendChild(seasonClosedBtn);
+                document.getElementById("launch_button").style.display = "none";
                 return
             }
             throw err // Re-throw other errors
