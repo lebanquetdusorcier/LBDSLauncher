@@ -460,21 +460,32 @@ async function dlAsync(login = true) {
     let distro
 
     try {
+        // Has user?
         const authUser = ConfigManager.getSelectedAccount()
-        if (authUser) {
-            setLaunchDetails(Lang.queryJS('landing.dlAsync.checkingSeasonStatus'))
-            try {
-                distro = await DistroAPI.refreshDistributionOrFallbackWithAuth(authUser)
-            } catch (err) {
-                if (err.message === 'season_is_closed') {
-                    loggerLaunchSuite.info('Season is closed, aborting launch.')
-                    showLaunchFailure(Lang.queryJS('landing.dlAsync.seasonClosedTitle'), Lang.queryJS('landing.dlAsync.seasonClosedText'))
-                    return
-                }
-                throw err // Re-throw other errors
+        if (!authUser) {
+            loggerLaunchSuite.info('No selected account issue.');
+            showLaunchFailure(Lang.queryJS('js.landing.selectedAccount.noAccountSelected'), Lang.queryJS('js.landing.selectedAccount.noAccountSelectedExplainLaunch'));
+            return;
+        }
+        // Is valid ?
+        const val = await validateSelectedAccount();
+        if (!val) {
+            loggerLaunchSuite.info('Invalid account issue.');
+            showLaunchFailure(Lang.queryJS('js.uibinder.validateAccount.failedMessageTitle'), Lang.queryJS('js.uibinder.validateAccount.failedMessage', { 'account': selectedAcc.displayName }));
+            return;
+        }
+        // Set launch details
+        setLaunchDetails(Lang.queryJS('landing.dlAsync.checkingSeasonStatus'))
+        // TODO: separate tasks for real
+        try {
+            distro = await DistroAPI.refreshDistributionOrFallbackWithAuth(authUser)
+        } catch (err) {
+            if (err.message === 'season_is_closed') {
+                loggerLaunchSuite.info('Season is closed, aborting launch.')
+                showLaunchFailure(Lang.queryJS('landing.dlAsync.seasonClosedTitle'), Lang.queryJS('landing.dlAsync.seasonClosedText'))
+                return
             }
-        } else {
-            distro = await DistroAPI.refreshDistributionOrFallback()
+            throw err // Re-throw other errors
         }
         onDistroRefresh(distro)
     } catch(err) {

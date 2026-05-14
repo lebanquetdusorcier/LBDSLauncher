@@ -47,8 +47,11 @@ api.exchangeTicket = async function(authUser) {
         this.sonarTicket = ticket
         return ticket
     } catch (error) {
-        if (error.response && error.response.body && error.response.body.message === 'season_is_closed') {
+        if (error.response && error.response.body && error.response.body.error === 'ticket_rejected' && error.response.body.message === 'season_is_closed') {
             throw new Error('season_is_closed')
+        }
+        if (error.response && error.response.body && error.response.body.error === 'ticket_rejected') {
+            throw new Error('ticket_rejected:' + error.response.body.message)
         }
         if (error.response && error.response.body && error.response.body.error) {
             throw new Error(error.response.body.error)
@@ -75,11 +78,8 @@ api.pullRemoteAuthenticated = async function(authUser) {
             responseStatus: 'SUCCESS'
         }
     } catch (error) {
-        if (error.message === 'season_is_closed') {
-            throw error
-        }
         this.sonarTicket = null
-        return this.pullRemote() // Fallback to unauthenticated
+        throw error
     }
 }
 
@@ -89,8 +89,9 @@ api.refreshDistributionOrFallbackWithAuth = async function(authUser) {
         DistributionAPI.log.warn('Failed to refresh distribution, falling back to current load (if exists).')
         return this.distribution
     } else {
+        console.log("Distribution received", distro);
         this.rawDistribution = distro
-        this.distribution = new (require('helios-core/common').DistributionFactory.HeliosDistribution)(distro, this.commonDir, this.instanceDir)
+        this.distribution = new (require('helios-core/common').HeliosDistribution)(distro, this.commonDir, this.instanceDir)
         return this.distribution
     }
 }
@@ -100,7 +101,8 @@ api._loadDistributionNullableWithAuth = async function(authUser) {
     if (!this.devMode && authUser) {
         distro = (await this.pullRemoteAuthenticated(authUser)).data
         if (distro == null) {
-            distro = await this.pullLocal()
+            throw "Unable to load remote distribution";
+            // return null;
         } else {
             await this.writeDistributionToDisk(distro)
         }

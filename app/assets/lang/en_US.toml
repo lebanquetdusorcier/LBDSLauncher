@@ -160,6 +160,7 @@ okay = "D'accord"
 
 [js.landing.selectedAccount]
 noAccountSelected = "Aucun compte sélectionné"
+noAccountSelectedExplainLaunch = "Pour lancer le jeu, vous devez avoir sélectionné un compte."
 
 [js.landing.selectedServer]
 noSelection = "Aucun serveur sélectionné"
