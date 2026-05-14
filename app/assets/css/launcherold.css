@@ -1,0 +1,2353 @@
+/*******************************************************************************
+ *                                                                             *
+ * Welcome View (welcome.ejs)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+#welcomeContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#welcomeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  top: -10%;
+  position: relative;
+}
+
+#welcomeImageSeal {
+  border-radius: 50%;
+  border: 2px solid #cad7e1;
+  background: rgba(1, 2, 1, 0.5);
+  height: 125px;
+  width: 125px;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+  margin-bottom: 5%;
+  margin-top: 10%;
+}
+
+#welcomeHeader {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-size: 20px;
+  text-shadow: white 0px 0px 0px;
+}
+
+#welcomeDescription {
+  text-align: justify;
+  font-size: 13px;
+  font-weight: 100;
+  text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 20px;
+}
+
+#welcomeDescCTA {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 100;
+  text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 20px;
+}
+
+/* Login button styles. */
+#welcomeButton {
+  background: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  padding: 15px 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  position: relative;
+  right: -20px;
+  transition: 0.5s ease;
+  margin-top: 5%;
+  margin-bottom: -5%;
+}
+#welcomeButton:disabled {
+  color: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
+#welcomeButton:hover,
+#welcomeButton:focus {
+  text-shadow: 0px 0px 20px #fff;
+  outline: none;
+}
+#welcomeButton:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7;
+}
+#welcomeSVG {
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow: visible;
+  transform: rotate(90deg);
+  margin-left: 20px;
+  transition: 0.25s ease;
+  width: 20px;
+  height: 20px;
+}
+#welcomeButton:hover #welcomeSVG,
+#welcomeButton:focus #welcomeSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #fff);
+}
+#welcomeButton:active #welcomeSVG .arrowLine {
+  stroke: #c7c7c7;
+}
+#welcomeButton:active #welcomeSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+}
+#welcomeButton:disabled #welcomeSVG .arrowLine {
+  stroke: rgba(255, 255, 255, 0.75);
+}
+
+#welcomeButtonContent {
+  display: flex;
+  align-items: center;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Login View (login.ejs)                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Styles for dimmer login span. */
+.loginSpanDim {
+  font-size: 12px;
+  color: #848484;
+  font-weight: bold;
+}
+
+/* Main login container. */
+#loginContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: filter 0.25s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Login cancel button styles. */
+#loginCancelContainer {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+/* Login cancel button styles. */
+#loginCancelButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+#loginCancelButton:hover #loginCancelIcon,
+#loginCancelButton:hover #loginCancelText,
+#loginCancelButton:focus #loginCancelIcon,
+#loginCancelButton:focus #loginCancelText {
+  text-shadow: 0px 0px 20px white;
+}
+#loginCancelButton:hover #loginCancelIcon,
+#loginCancelButton:focus #loginCancelIcon {
+  box-shadow: 0px 0px 20px white;
+}
+#loginCancelButton:active #loginCancelIcon,
+#loginCancelButton:active #loginCancelText {
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+#loginCancelButton:active #loginCancelIcon {
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+}
+#loginCancelButton:disabled {
+  pointer-events: none;
+}
+#loginCancelButton:disabled #loginCancelIcon,
+#loginCancelButton:disabled #loginCancelText {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+/* The X in a circle icon for the cancel button. */
+#loginCancelIcon {
+  border-radius: 50%;
+  border: 1px solid white;
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  transition: 0.25s ease;
+}
+/* Text for the login cancel button. */
+#loginCancelText {
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+/* Login content wrapper. */
+#loginContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0px 25px;
+}
+
+/* Login form. */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login form anchor styles. */
+#loginForm a {
+  font-size: 12px;
+  color: #848484;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+#loginForm a:hover,
+#loginForm a:focus {
+  color: #a2a2a2;
+  outline: none;
+}
+#loginForm a:active {
+  color: #8b8b8b;
+}
+
+/* Logo on login form. */
+#loginImageSeal {
+  border-radius: 50%;
+  border: 2px solid #cad7e1;
+  background: rgba(1, 2, 1, 0.5);
+  height: 125px;
+  width: 125px;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+/* Header on login view. */
+#loginSubheader {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  margin-bottom: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Container to organize login field elements. */
+.loginFieldContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG icons on the login view. */
+.loginSVG {
+  fill: #fff;
+  height: 20px;
+  width: 20px;
+}
+
+/* Span which displays errors related to login field content. */
+.loginErrorSpan {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  font-weight: bold;
+  font-size: 8px;
+  color: #ff1b0c;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 7px;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Login text input styles. */
+.loginField {
+  font-family: "Albert Sans";
+  background: none;
+  border-width: 1.5px 0px 0px 0px;
+  border-style: solid;
+  width: 250px;
+  margin-bottom: 20px;
+  border-color: #fff;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 7.5px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.loginField:focus {
+  outline: none;
+}
+.loginField:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+.loginField::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+}
+.loginField:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* Add spacing between password field and options bar. */
+#labelPassword {
+  margin-bottom: 13px;
+}
+
+/* Container which contains the forgot and remember options. */
+#loginOptions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Remember option text. */
+#loginRememberText {
+  padding-right: 10px;
+  transition: 0.25s ease;
+}
+
+/* Login button styles. */
+#loginButton {
+  background: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  padding: 15px 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  position: relative;
+  right: -20px;
+  transition: 0.5s ease;
+}
+#loginButton:disabled {
+  color: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
+#loginButton[loading] {
+  color: #fff;
+}
+#loginButton:hover,
+#loginButton:focus {
+  text-shadow: 0px 0px 20px #fff;
+  outline: none;
+}
+#loginButton:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7;
+}
+#loginSVG {
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow: visible;
+  transform: rotate(90deg);
+  margin-left: 20px;
+  transition: 0.25s ease;
+  width: 20px;
+  height: 20px;
+}
+#loginButton:hover #loginSVG,
+#loginButton:focus #loginSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #fff);
+}
+#loginButton:active #loginSVG .arrowLine {
+  stroke: #c7c7c7;
+}
+#loginButton:active #loginSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+}
+#loginButton:disabled #loginSVG .arrowLine {
+  stroke: rgba(255, 255, 255, 0.75);
+}
+
+#loginButtonContent {
+  display: flex;
+  align-items: center;
+}
+
+#loginButton .circle-loader,
+#loginButton[loading] #loginSVG {
+  display: none;
+}
+#loginButton[loading] .circle-loader,
+#loginButton #loginSVG {
+  display: initial;
+}
+
+.circle-loader {
+  margin-left: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-left-color: #ffffff;
+  animation-name: loader-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+.load-complete {
+  animation: none;
+  border-color: #ffffff;
+  transition: border 500ms ease-out;
+}
+.checkmark {
+  display: none;
+}
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+}
+.checkmark:after {
+  opacity: 1;
+  height: 8px;
+  width: 4px;
+  transform-origin: left top;
+  border-right: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  content: "";
+  left: 2px;
+  top: 8px;
+  position: absolute;
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 4px;
+    opacity: 1;
+  }
+  40% {
+    height: 8px;
+    width: 4px;
+    opacity: 1;
+  }
+  100% {
+    height: 8px;
+    width: 4px;
+    opacity: 1;
+  }
+}
+
+/*.spinningCircle {
+    margin-left: 20px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0);
+    border-top-color: #ffffff;
+    border-right-color: #ffffff;
+    border-left-color: rgba(255, 255, 255, 0.50);
+    border-bottom-color: rgba(255, 255, 255, 0.50);
+    animation: single2 4s infinite linear;
+}
+
+@keyframes single2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}*/
+
+/* Disclaimer container. */
+#loginDisclaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add spacing between register anchor and disclaimer. */
+#loginRegisterSpan {
+  margin-bottom: 5px;
+}
+
+/* Disclaimer text styles. */
+.loginDisclaimerText {
+  font-size: 7px;
+  color: #848484;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* * *
+* Login View | Custom Checkbox
+* * */
+
+/* Checkbox container. */
+#checkmarkContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+}
+
+/* Hide the default checkbox. */
+#checkmarkContainer input {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+/* Create a custom checkbox. */
+.loginCheckmark {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border: 1px solid #848484;
+  border-radius: 1px;
+  background: none;
+  transition: 0.25s ease;
+}
+/* On hover and focus, add a grey border color. */
+#checkmarkContainer:hover input ~ *,
+#checkmarkContainer input:focus ~ * {
+  color: #a2a2a2;
+  border-color: #a2a2a2;
+}
+/* On keydown, darken the checkbox a bit. */
+#checkmarkContainer input:active ~ *:not(#loginRememberText) {
+  color: #8d8d8d;
+  border-color: #8d8d8d;
+}
+#checkmarkContainer[disabled] {
+  pointer-events: none;
+}
+/* For checked -> #checkmarkContainer input:checked ~ * */
+/* Create the checkmark/indicator (hidden when not checked). */
+.loginCheckmark:after {
+  content: "";
+  display: none;
+}
+/* Show the checkmark when checked. */
+#checkmarkContainer input:checked ~ .loginCheckmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator. */
+#checkmarkContainer .loginCheckmark:after {
+  position: absolute;
+  left: 3.5px;
+  top: 0.5px;
+  width: 2px;
+  height: 6px;
+  border: solid #a2a2a2;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/*
+#login_filter {
+    height: calc(100% - 22px);
+    width: 100%;
+    z-index: 9000;
+    position: absolute;
+    filter: blur(8px) contrast(0.9) brightness(1.0);
+    background: url('./../images/backgrounds/0.jpg') no-repeat center center fixed;
+    transform: scale(1.2);
+    background-size: cover;
+}
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * Waiting View (waiting.ejs)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+#waitingContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: filter 0.25s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#waitingContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  top: -10%;
+  position: relative;
+}
+
+.waitingSpinner:before {
+  transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateBefore infinite linear reverse;
+}
+.waitingSpinner:after {
+  transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateAfter infinite linear;
+}
+.waitingSpinner:before,
+.waitingSpinner:after {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  position: fixed;
+  top: calc(50% - 5em);
+  /* left: 50%; */
+  margin-top: -5em;
+  margin-left: -5em;
+  width: 10em;
+  height: 10em;
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  transform: rotateY(50%);
+  perspective-origin: 50% 50%;
+  perspective: 340px;
+  background-size: 10em 10em;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjZmZmZmZmIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+}
+
+#waitingTextContainer {
+  position: fixed;
+  top: 50%;
+}
+
+@keyframes rotateBefore {
+  from {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotateAfter {
+  from {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Login Options View (loginOptions.ejs)                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+#loginOptionsContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: filter 0.25s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#loginOptionsContent {
+  border-radius: 3px;
+  position: relative;
+  top: -5%;
+}
+
+.loginOptionsMainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginOptionActions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.loginOptionButtonContainer {
+  width: 16em;
+}
+
+.loginOptionButton {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 3px;
+  height: 50px;
+  width: 100%;
+  text-align: left;
+  padding: 0px 25px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.loginOptionButton:hover,
+.loginOptionButton:focus {
+  background: rgba(54, 54, 54, 0.25);
+  text-shadow: 0px 0px 20px white;
+}
+
+#loginOptionCancelContainer {
+  position: absolute;
+  bottom: -100px;
+}
+
+#loginOptionCancelButton {
+  background: none;
+  border: none;
+  padding: 2px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: lightgrey;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+}
+#loginOptionCancelButton:hover,
+#loginOptionCancelButton:focus {
+  text-shadow: 0px 0px 20px lightgrey;
+}
+#loginOptionCancelButton:active {
+  text-shadow: 0px 0px 20px rgba(211, 211, 211, 0.75);
+  color: rgba(211, 211, 211, 0.75);
+}
+#loginOptionCancelButton:disabled {
+  color: rgba(211, 211, 211, 0.75);
+  pointer-events: none;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Settings View (settings.ejs)                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Settings tab shared styles. */
+.settingsTab::-webkit-scrollbar {
+  width: 2px;
+}
+.settingsTab::-webkit-scrollbar-track {
+  display: none;
+}
+.settingsTab::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Selected server content container */
+.settingsSelServContainer {
+  background: rgba(0, 0, 0, 0.25);
+  width: 75%;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+/* Div which will be populated with the selected server's information. */
+.settingsSelServContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 0px;
+}
+
+/* Wrapper container for the switch server button. */
+.settingsSwitchServerContainer {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Button to switch server configurations on the mods tab. */
+.settingsSwitchServerButton {
+  opacity: 0;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background: none;
+  font-size: 12px;
+  border-radius: 3px;
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  transition: 0.25s ease;
+  cursor: pointer;
+  outline: none;
+}
+.settingsSwitchServerButton:hover,
+.settingsSwitchServerButton:focus {
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.25);
+}
+.settingsSwitchServerButton:active {
+  box-shadow: 0px 0px 20px rgb(187, 187, 187);
+  background: rgba(187, 187, 187, 0.25);
+  border: 1px solid rgb(187, 187, 187);
+  color: rgb(187, 187, 187);
+}
+.settingsSelServContainer:hover .settingsSwitchServerButton {
+  opacity: 1;
+}
+
+/* Remove spin button from number inputs. */
+#settingsContainer input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Default styles for text/number inputs. */
+#settingsContainer input[type="number"],
+#settingsContainer input[type="text"] {
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  font-family: "Albert Sans";
+  transition: 0.25s ease;
+}
+#settingsContainer input[type="number"]:focus,
+#settingsContainer input[type="text"]:focus {
+  outline: none;
+  border-color: rgba(126, 126, 126, 0.87);
+}
+#settingsContainer input[type="number"][error] {
+  border-color: rgb(255, 27, 12);
+  background: rgba(236, 0, 0, 0.25);
+  color: rgb(255, 27, 12);
+}
+
+/* Styles for a generic settings entry. */
+.settingsFieldContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  width: 75%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.settingsFieldLeft {
+  display: flex;
+  flex-direction: column;
+}
+.settingsFieldTitle {
+  font-size: 14px;
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  color: rgba(255, 255, 255, 0.95);
+}
+.settingsFieldDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 5px;
+}
+.settingsDivider {
+  height: 1px;
+  width: 75%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Toggle Switch */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.toggleSwitch input {
+  display: none;
+}
+.toggleSwitchSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.35);
+  transition: 0.4s;
+  border-radius: 50px;
+  border: 1px solid rgba(126, 126, 126, 0.57);
+}
+.toggleSwitchSlider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 50px;
+  transition: 0.4s;
+}
+input:checked + .toggleSwitchSlider {
+  background-color: rgb(31, 140, 11);
+  /* box-shadow: inset 2px 1px 20px black; */
+  border: 1px solid rgb(31, 140, 11);
+}
+input:checked + .toggleSwitchSlider:before {
+  transform: translateX(15px);
+}
+
+/* Range Slider styles. */
+.rangeSlider {
+  width: 35%;
+  height: 5px;
+  margin: 15px 0px;
+  background: grey;
+  border-radius: 3px;
+  position: relative;
+}
+.rangeSliderBar {
+  position: absolute;
+  background: #8be88b;
+  width: 50%;
+  height: 5px;
+  border-radius: 3px 0px 0px 3px;
+  transition: background 0.25s ease;
+}
+.rangeSliderTrack {
+  position: absolute;
+  top: -7.5px;
+  width: 7px;
+  height: 20px;
+  background: white;
+  border-radius: 3px;
+  left: 50%;
+  cursor: ew-resize;
+}
+
+/* File selectors */
+
+/* Main container for File selectors. */
+.settingsFileSelContainer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 75%;
+}
+
+/* File selector title. */
+.settingsFileSelTitle {
+  margin-bottom: 10px;
+}
+
+/* Wrapper container for the actionable elements. */
+.settingsFileSelActions {
+  display: flex;
+  width: 90%;
+}
+
+/* File selector icon settings. */
+.settingsFileSelIcon {
+  display: flex;
+  align-items: center;
+  background: rgba(126, 126, 126, 0.57);
+  border-radius: 3px 0px 0px 3px;
+  padding: 5px;
+  transition: 0.25s ease;
+}
+.settingsFileSelSVG {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* Disabled text field which stores the selected file path. */
+.settingsFileSelVal {
+  border-radius: 0px !important;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 12px;
+  height: 30px;
+}
+
+/* File selection button. */
+.settingsFileSelButton {
+  border: 0px;
+  border-radius: 0px 3px 3px 0px;
+  font-size: 12px;
+  padding: 0px 5px;
+  cursor: pointer;
+  background: rgba(126, 126, 126, 0.57);
+  transition: 0.25s ease;
+  white-space: nowrap;
+  outline: none;
+}
+.settingsFileSelButton:hover,
+.settingsFileSelButton:focus {
+  text-shadow: 0px 0px 20px white;
+}
+.settingsFileSelButton:active {
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Description for the file selector. */
+.settingsFileSelDesc {
+  font-size: 10px;
+  margin: 20px 0px;
+  color: lightgrey;
+  width: 89%;
+}
+.settingsFileSelDesc strong {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+}
+
+/* * *
+* Settings View (Minecraft Tab)
+* * */
+
+/* Game resolution UI elements. */
+#settingsGameResolutionContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width: 75%;
+}
+#settingsGameResolutionContent {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+#settingsGameResolutionCross {
+  color: grey;
+  padding: 0px 15px;
+}
+#settingsGameWidth,
+#settingsGameHeight {
+  padding: 7.5px 5px;
+  width: 75px;
+}
+
+/* * *
+* Settings View (Mods Tab)
+* * */
+
+/* Main content container for the mod elements. */
+#settingsModsContainer {
+  width: 75%;
+}
+
+/* Mod sub-container header text. */
+.settingsModsHeader {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+/* Mod elements sub-containers. */
+#settingsReqModsContainer,
+#settingsOptModsContainer,
+#settingsDropinModsContainer {
+  padding-bottom: 25px;
+}
+
+/* Main content containers for mod elements. */
+#settingsReqModsContent,
+#settingsOptModsContent,
+#settingsDropinModsContent {
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  color: white;
+}
+
+/* Mod elements. */
+.settingsMod,
+.settingsDropinMod {
+  padding: 10px;
+}
+.settingsSubMod {
+  padding: 10px 0px 10px 15px;
+  margin-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Main content container for mod element information. */
+.settingsModContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.25s ease;
+}
+
+/* Wrapper container for the left side of a mod element. */
+.settingsModMainWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Mod enabled/disabled status. */
+.settingsModStatus {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #c32625;
+  margin-right: 15px;
+  transition: 0.25s ease;
+}
+
+/* Mod details container. */
+.settingsModDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The version of the mod. */
+.settingsModVersion {
+  color: grey;
+  font-size: 10px;
+}
+
+/* Disabled toggleswitch for required mods. */
+.toggleSwitch[reqmod] {
+  filter: grayscale(49%) brightness(60%);
+  pointer-events: none;
+}
+
+/* Set the status color of an enabled mod. */
+.settingsBaseMod[enabled]
+  > .settingsModContent
+  > .settingsModMainWrapper
+  > .settingsModStatus {
+  background-color: rgb(165, 195, 37);
+}
+
+/* Add opacity to submods of a disabled mod. */
+.settingsBaseMod:not([enabled]) > .settingsSubModContainer .settingsModContent {
+  opacity: 0.5;
+}
+
+/* Curve the left border for submods. */
+.settingsSubModContainer > .settingsSubMod:first-child {
+  border-top-left-radius: 10px;
+}
+.settingsSubModContainer > .settingsSubMod:last-child {
+  border-bottom-left-radius: 10px;
+}
+.settingsSubModContainer > .settingsSubMod:only-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Wrapper container for all submods. */
+.settingsSubModContainer {
+  margin-top: 10px;
+}
+
+/* Button to open the mods folder for drop-in mods. */
+#settingsDropinFileSystemButton {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 3px;
+  height: 50px;
+  width: 100%;
+  text-align: left;
+  padding: 0px 50px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+  margin-bottom: 10px;
+}
+#settingsDropinFileSystemButton:hover,
+#settingsDropinFileSystemButton:focus,
+#settingsDropinFileSystemButton[drag] {
+  background: rgba(54, 54, 54, 0.25);
+  text-shadow: 0px 0px 20px white;
+}
+/* Refresh instructions on the file system button. */
+#settingsDropinRefreshNote {
+  font-size: 10px;
+  pointer-events: none;
+}
+
+/* Button to remove drop-in mods. */
+.settingsDropinRemoveButton {
+  background: none;
+  border: none;
+  font-size: 10px;
+  text-align: left;
+  padding: 0px;
+  color: #c32625;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+}
+.settingsDropinRemoveButton:hover,
+.settingsDropinRemoveButton:focus {
+  text-shadow: 0px 0px 20px #c32625, 0px 0px 20px #c32625, 0px 0px 20px #c32625;
+}
+.settingsDropinRemoveButton:active {
+  color: #9b1f1f;
+  text-shadow: 0px 0px 20px #9b1f1f, 0px 0px 20px #9b1f1f, 0px 0px 20px #9b1f1f;
+}
+
+/* Shaderpack settings description. */
+#settingsShaderpackDesc {
+  font-size: 10px;
+  margin: 10px 0px;
+  color: lightgrey;
+  font-weight: bold;
+  width: 89%;
+}
+
+/* Wrapper container. */
+#settingsShaderpackWrapper {
+  display: flex;
+}
+
+/* Button to add shaderpacks. */
+#settingsShaderpackButton {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+  font-size: 14px;
+  padding: 6px 11px;
+  margin-right: 5px;
+}
+#settingsShaderpackButton:hover,
+#settingsShaderpackButton:focus,
+#settingsShaderpackButton[drag] {
+  background: rgba(54, 54, 54, 0.25);
+  text-shadow: 0px 0px 20px white;
+}
+
+/* Main select container. */
+.settingsSelectContainer {
+  position: relative;
+  width: 50%;
+}
+
+/* Div which displays the selected option. */
+.settingsSelectSelected {
+  border-radius: 3px;
+  border-width: 1px;
+  font-size: 14px;
+  padding: 6px 16px;
+}
+
+/* Style the arrow inside the select element. */
+.settingsSelectSelected:after {
+  position: absolute;
+  content: "";
+  top: calc(50% - 3px);
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: rgba(126, 126, 126, 0.57) transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active). */
+.settingsSelectSelected.select-arrow-active:after {
+  border-color: transparent transparent rgba(126, 126, 126, 0.57) transparent;
+  top: 7px;
+}
+.settingsSelectSelected.select-arrow-active {
+  border-radius: 3px 3px 0px 0px;
+}
+
+/* Options content container. */
+.settingsSelectOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 300%;
+  overflow-y: scroll;
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-top: none;
+  border-radius: 0px 0px 3px 3px;
+}
+/* Hide the items when the select box is closed. */
+.settingsSelectOptions[hidden] {
+  display: none;
+}
+.settingsSelectOptions::-webkit-scrollbar {
+  width: 2px;
+}
+.settingsSelectOptions::-webkit-scrollbar-track {
+  display: none;
+}
+.settingsSelectOptions::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Shared styles between options and selection div. */
+.settingsSelectOptions div,
+.settingsSelectSelected {
+  background: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  border-color: rgba(126, 126, 126, 0.57);
+  color: #ffffff;
+  cursor: pointer;
+}
+.settingsSelectOptions div {
+  border-width: 0px 0px 1px 0px;
+  font-size: 12px;
+  padding: 4px 16px;
+}
+.settingsSelectOptions div:last-child {
+  border-bottom: none;
+}
+
+/* Hover + selected styles. */
+.settingsSelectOptions div:hover,
+.settingsSelectOptions div[selected] {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* * *
+* Settings View (Java Tab)
+* * */
+
+/* Style links on the Java tab. */
+#settingsTabJava a,
+.settingsChangelogText a {
+  color: rgba(202, 202, 202, 0.75);
+  transition: 0.25s ease;
+  outline: none;
+}
+#settingsTabJava a:hover,
+#settingsTabJava a:focus,
+.settingsChangelogText a:hover,
+.settingsChangelogText a:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
+#settingsTabJava a:active,
+.settingsChangelogText a:active {
+  color: rgba(165, 165, 165, 0.75);
+}
+
+/* Main container for memory management. */
+#settingsMemoryContainer {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Memory management title. */
+#settingsMemoryTitle {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Memory management content. */
+#settingsMemoryContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#settingsMemoryContentLeft {
+  width: 69%;
+}
+#settingsMemoryContentRight {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
+
+/* Header for memory sliders. */
+.settingsMemoryHeader {
+  font-size: 14px;
+}
+
+/* Wrapper container for a memory slider and label. */
+.settingsMemoryActionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Label which displays a memory slider's value. */
+.settingsMemoryLabel {
+  font-size: 14px;
+  margin-right: 2%;
+}
+
+/* Range sliders for min and max memory settings. */
+#settingsMaxRAMRange,
+#settingsMinRAMRange {
+  width: 85%;
+}
+
+/* Memory status elements. */
+#settingsMemoryStatus {
+  display: flex;
+  flex-direction: column;
+}
+#settingsMemoryStatus > .settingsMemoryStatusContainer:not(:last-child) {
+  margin-bottom: 50%;
+}
+.settingsMemoryStatusContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settingsMemoryStatusTitle {
+  font-size: 12px;
+  color: grey;
+  font-weight: bold;
+}
+.settingsMemoryStatusValue {
+  color: lightgrey;
+  font-size: 16px;
+}
+
+/* Description for memory management. */
+#settingsMemoryDesc {
+  font-size: 10px;
+  margin: 20px 0px;
+  color: lightgrey;
+  font-weight: bold;
+}
+
+/* Status text which displays details on the selected executable. */
+#settingsJavaExecDetails {
+  font-weight: bold;
+  color: grey;
+  font-size: 12px;
+}
+
+/* Main container for the JVM options setting. */
+#settingsJVMOptsContainer {
+  width: 75%;
+}
+
+/* JVM options title. */
+#settingsJVMOptsTitle {
+  margin-bottom: 10px;
+}
+
+/* Wrapper container for the actionable elements. */
+#settingsJVMOptsContent {
+  display: flex;
+  width: 90%;
+}
+
+/* Text field to input the JVM options. */
+#settingsJVMOptsVal {
+  border-radius: 0px 3px 3px 0px !important;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+#settingsJVMOptsContent:focus-within > .settingsJavaIcon {
+  background: rgba(126, 126, 126, 0.87);
+}
+
+/* Description for the JVM options setting. */
+#settingsJVMOptsDesc {
+  font-size: 10px;
+  margin: 20px 0px;
+  color: lightgrey;
+  font-weight: bold;
+  width: 89%;
+}
+
+/* * *
+* Settings View (Launcher Tab)
+* * */
+
+/* Tailored style for the data directory header. */
+#settingsDataDirTitle {
+  margin-bottom: 10px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Landing View (News Styles)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Main container. */
+#newsContainer {
+  position: absolute;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  transition: top 2s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* News content container. */
+#newsContent {
+  height: 82vh;
+  width: 100%;
+  display: flex;
+  -webkit-user-select: initial;
+  position: relative;
+}
+
+/* Drop shadow displayed when content is scrolled out of view. */
+#newsContent:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.25), transparent);
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+#newsContent[scrolled]:before {
+  opacity: 1;
+}
+
+/* News article status container (left). */
+#newsStatusContainer {
+  width: calc(30% - 60px);
+  height: calc(100% - 30px);
+  padding: 15px 15px 15px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* News status content. */
+#newsStatusContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* News title wrapper. */
+#newsTitleContainer {
+  display: flex;
+  max-width: 90%;
+}
+
+/* News article title styles. */
+#newsArticleTitle {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  color: white;
+  text-decoration: none;
+  transition: 0.25s ease;
+  outline: none;
+  text-align: right;
+}
+#newsArticleTitle:hover,
+#newsArticleTitle:focus {
+  text-shadow: 0px 0px 20px white;
+}
+#newsArticleTitle:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7;
+}
+
+/* News meta container. */
+#newsMetaContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Date and author wrappers. */
+#newsArticleDateWrapper,
+#newsArticleAuthorWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Date and author shared styles. */
+#newsArticleDate,
+#newsArticleAuthor {
+  display: inline-block;
+  font-size: 10px;
+  padding: 0px 5px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+/* Date styles. */
+#newsArticleDate {
+  background: white;
+  color: black;
+  margin-top: 5px;
+}
+
+/* Author styles. */
+#newsArticleAuthor {
+  background: #a02d2a;
+}
+
+/* News article comments styles. */
+#newsArticleComments {
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.25s ease;
+  outline: none;
+  text-align: right;
+}
+#newsArticleComments:focus,
+#newsArticleComments:hover {
+  color: #e0e0e0;
+}
+#newsArticleComments:active {
+  color: #c7c7c7;
+}
+
+/* Article content container (right). */
+#newsArticleContainer {
+  width: calc(100% - 25px);
+  height: 100%;
+  margin: 0px 0px 0px 25px;
+}
+
+/* Article content styles. */
+#newsArticleContentScrollable {
+  font-size: 12px;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 0px 15px 0px 15px;
+}
+#newsArticleContentScrollable img,
+#newsArticleContentScrollable iframe {
+  max-width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+#newsArticleContentScrollable a {
+  color: rgba(202, 202, 202, 0.75);
+  transition: 0.25s ease;
+  outline: none;
+}
+#newsArticleContentScrollable a:hover,
+#newsArticleContentScrollable a:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
+#newsArticleContentScrollable a:active {
+  color: rgba(165, 165, 165, 0.75);
+}
+#newsArticleContentScrollable::-webkit-scrollbar {
+  width: 2px;
+}
+#newsArticleContentScrollable::-webkit-scrollbar-track {
+  display: none;
+}
+#newsArticleContentScrollable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.bbCodeSpoilerButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s ease;
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+.bbCodeSpoilerButton:hover,
+.bbCodeSpoilerButton:focus {
+  text-shadow: 0px 0px 20px #ffffff, 0px 0px 20px #ffffff, 0px 0px 20px #ffffff;
+}
+.bbCodeSpoilerButton:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7;
+}
+.bbCodeSpoilerText {
+  display: none;
+  padding: 15px 0px;
+  border-bottom: 1px solid white;
+}
+
+#newsArticleContentWrapper {
+  width: 80%;
+}
+
+.newsArticleSpacerTop {
+  height: 15px;
+}
+
+/* Div to add spacing at the end of a news article. */
+.newsArticleSpacerBot {
+  height: 30px;
+}
+
+/* News navigation container. */
+#newsNavigationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  -webkit-user-select: none;
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
+}
+
+/* Navigation status span. */
+#newsNavigationStatus {
+  font-size: 12px;
+  margin: 0px 15px;
+}
+
+/* Left and right navigation button styles. */
+#newsNavigateLeft,
+#newsNavigateRight {
+  background: none;
+  border: none;
+  outline: none;
+  height: 20px;
+  cursor: pointer;
+}
+#newsNavigateLeft:hover #newsNavigationLeftSVG,
+#newsNavigateLeft:focus #newsNavigationLeftSVG,
+#newsNavigateRight:hover #newsNavigationRightSVG,
+#newsNavigateRight:focus #newsNavigationRightSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #fff);
+}
+#newsNavigateLeft:active #newsNavigationLeftSVG .arrowLine,
+#newsNavigateRight:active #newsNavigationRightSVG .arrowLine {
+  stroke: #c7c7c7;
+}
+#newsNavigateLeft:active #newsNavigationLeftSVG,
+#newsNavigateRight:active #newsNavigationRightSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+}
+#newsNavigateLeft:disabled #newsNavigationLeftSVG .arrowLine,
+#newsNavigateRight:disabled #newsNavigationRightSVG .arrowLine {
+  stroke: rgba(255, 255, 255, 0.75);
+}
+#newsNavigationLeftSVG {
+  transform: rotate(-90deg);
+  width: 15px;
+}
+#newsNavigationRightSVG {
+  transform: rotate(90deg);
+  width: 15px;
+}
+
+/* News error (message) container. */
+#newsErrorContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#newsErrorFailed {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* News error content (message). */
+.newsErrorContent {
+  font-size: 20px;
+}
+#newsErrorLoading {
+  display: flex;
+  width: 168.92px;
+}
+#nELoadSpan {
+  white-space: pre;
+}
+/* News error retry button styles. */
+#newsErrorRetry {
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.25s ease;
+}
+#newsErrorRetry:focus,
+#newsErrorRetry:hover {
+  text-shadow: 0px 0px 20px white;
+}
+#newsErrorRetry:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7;
+}
+
+/* * *
+* Landing View (Bottom Styles) | Center Content
+* * */
+
+/* Button which opens the news view. */
+#newsButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+#newsButton:hover #newsButtonText,
+#newsButton:focus #newsButtonText {
+  text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff;
+}
+#newsButton:active {
+  color: #c7c7c7;
+  text-shadow: 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7;
+}
+
+#newsButton:hover #newsButtonSVG,
+#newsButton:focus #newsButtonSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #fff);
+}
+#newsButton:active #newsButtonSVG .arrowLine {
+  stroke: #c7c7c7;
+}
+#newsButton:active #newsButtonSVG {
+  -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+}
+#newsButton:disabled #newsButtonSVG .arrowLine {
+  stroke: rgba(255, 255, 255, 0.75);
+}
+
+/* Icon which indicates there is new news. */
+#newsButtonAlert {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  background: red;
+  right: -1px;
+  top: 50%;
+}
+
+/* Arrow image which floats above the news button. */
+#newsButtonSVG {
+  height: 11px;
+  margin-left: -2px;
+  transition: 0.25s ease;
+}
+
+/* Span which contains the news button text. */
+#newsButtonText {
+  color: white;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 0px #bebcbb;
+  font-size: 11px;
+  line-height: 30px;
+  display: flex;
+  transition: 0.25s ease;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Overlay View (overlay.ejs)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+/* * *
+* Overlay View (Main Content)
+* * */
+
+/* Overlay container, placed over the main div. */
+#overlayContainer {
+  position: absolute;
+  z-index: 500;
+  top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 22px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Main overlay content. */
+#overlayContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-between;*/
+  width: 300px;
+  /*height: 35%;*/
+  box-sizing: border-box;
+  padding: 15px 0px;
+  /* background-color: #424242; */
+  text-align: center;
+}
+
+/* Main overlay content anchor styles. */
+#overlayContent a,
+#overlayDismiss {
+  color: rgba(202, 202, 202, 0.75);
+  transition: 0.25s ease;
+}
+#overlayContent a:hover,
+#overlayContent a:focus,
+#overlayDismiss:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
+#overlayContent a:active,
+#overlayDismiss:active {
+  color: rgba(165, 165, 165, 0.75);
+}
+
+/* Add spacing between overlay content elements. */
+#overlayContent > *:first-child {
+  margin-top: 0px !important;
+}
+#overlayContent > *:last-child {
+  margin-bottom: 0px !important;
+}
+#overlayContent > * {
+  margin: 8px 0px;
+}
+
+/* Overlay title styles. */
+#overlayTitle {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-user-select: initial;
+}
+
+/* Overlay description styles. */
+#overlayDesc {
+  font-size: 12px;
+  font-weight: bold;
+  -webkit-user-select: initial;
+}
+
+/* Div which contains action buttons. */
+#overlayActionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Overlay acknowledge button styles. */
+#overlayAcknowledge {
+  background: none;
+  border: 1px solid #ffffff;
+  color: white;
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0px 8.1px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+#overlayAcknowledge:hover,
+#overlayAcknowledge:focus {
+  box-shadow: 0px 0px 10px 0px #fff;
+  outline: none;
+}
+#overlayAcknowledge:active {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Overlay dismiss option styles. */
+#overlayDismiss {
+  font-weight: bold;
+  font-size: 10px;
+  text-decoration: none;
+  padding-top: 2.5px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#overlayDismiss:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+#overlayDismiss:active {
+  color: rgba(165, 165, 165, 0.75);
+}
+
+/* * *
+* Overlay View (Server + Account Selection Content)
+* * */
+
+/* Server selection content container. */
+#serverSelectContent,
+#accountSelectContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+/* Server selection header. */
+#serverSelectHeader,
+#accountSelectHeader {
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* Wrapper div for the list of available servers. */
+#serverSelectList,
+#accountSelectList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 65%;
+  min-height: 40%;
+}
+
+/* Scrollable div which lists the available servers. */
+#serverSelectListScrollable,
+#accountSelectListScrollable {
+  padding: 0px 5px;
+  overflow-y: scroll;
+}
+#serverSelectListScrollable::-webkit-scrollbar,
+#accountSelectListScrollable::-webkit-scrollbar {
+  width: 2px;
+}
+#serverSelectListScrollable::-webkit-scrollbar-track,
+#accountSelectListScrollable::-webkit-scrollbar-track {
+  display: none;
+}
+#serverSelectListScrollable::-webkit-scrollbar-thumb,
+#accountSelectListScrollable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Content container for a server listing. */
+.serverListing {
+  border: none;
+  padding: 0px;
+  width: 375px;
+  min-height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0.6;
+  transition: 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  background: rgba(131, 131, 131, 0.25);
+}
+.serverListing[selected] {
+  cursor: default;
+  opacity: 1;
+}
+.serverListing:hover,
+.serverListing:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.accountListing {
+  color: white;
+  border: 1px solid rgba(126, 126, 126, 0.57);
+  border-radius: 3px;
+  padding: 5px 45px;
+  width: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0.6;
+  transition: 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+}
+.accountListing[selected] {
+  cursor: default;
+  opacity: 1;
+}
+.accountListing:hover,
+.accountListing:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.accountListingName {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+}
+
+/* Add spacing between server listings. */
+#serverSelectListScrollable > .serverListing:not(:first-child):not(:last-child),
+#accountSelectListScrollable
+  > .accountListing:not(:first-child):not(:last-child) {
+  margin: 5px 0px;
+}
+#serverSelectListScrollable > .serverListing:first-child,
+#accountSelectListScrollable > .accountListing:first-child {
+  margin-bottom: 5px;
+}
+#serverSelectListScrollable > .serverListing:last-child,
+#accountSelectListScrollable > .accountListing:last-child {
+  margin-top: 5px;
+}
+
+/* Server listing image. */
+.serverListingImg {
+  margin: 0px 10px 0px 5px;
+  border: 1px solid #fff;
+  height: 50px;
+  width: 50px;
+}
+
+/* Content container for the server listing's details. */
+.serverListingDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 50px;
+}
+
+/* The name of the server listing. */
+.serverListingName {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Description for the server listing. */
+.serverListingDescription {
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Content container for the server listing's information. */
+.serverListingInfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* The minecraft version of the server listing. */
+.serverListingVersion {
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(31, 140, 11, 0.8);
+  padding: 0px 2px;
+}
+
+/* The revision version of the server's manifest. */
+.serverListingRevision {
+  color: #969696;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 0px 5px;
+}
+
+/* Star which indicates the default (main) server. */
+.serverListingStarWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 12px;
+  position: relative;
+}
+/* Tooltip which displays when hovering over the star. */
+.serverListingStarTooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  left: 130%;
+  font-size: 10px;
+  transition: visibility 0s linear 0.25s, opacity 0.25s ease;
+}
+.serverListingStarTooltip::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.4) transparent transparent;
+}
+.serverListingStarWrapper:hover .serverListingStarTooltip {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* Content container which contains the server select actions. */
+#serverSelectActions,
+#accountSelectActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/* Server selection confirm button styles. */
+#serverSelectConfirm,
+#accountSelectConfirm {
+  background: none;
+  border: 1px solid #ffffff;
+  color: white;
+  font-family: "Albert Sans";
+  font-weight: "bold";
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0px 8.1px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  min-height: 20.67px;
+}
+#serverSelectConfirm:hover,
+#serverSelectConfirm:focus,
+#accountSelectConfirm:hover,
+#accountSelectConfirm:focus {
+  box-shadow: 0px 0px 10px 0px #fff;
+  outline: none;
+}
+#serverSelectConfirm:active,
+#accountSelectConfirm:active {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Server selection cancel button styles. */
+#serverSelectCancel,
+#accountSelectCancel {
+  font-weight: bold;
+  font-size: 10px;
+  text-decoration: none;
+  padding-top: 2.5px;
+  color: rgba(202, 202, 202, 0.75);
+  transition: 0.25s ease;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#serverSelectCancel:hover,
+#serverSelectCancel:focus,
+#accountSelectCancel:hover,
+#accountSelectCancel:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
+#serverSelectCancel:active,
+#accountSelectCancel:active {
+  color: rgba(165, 165, 165, 0.75);
+}
